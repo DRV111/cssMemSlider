@@ -1,0 +1,137 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #25282a;
+}
+
+h3 {
+  color: #fff;
+}
+
+.slider {
+  margin: 0 auto;
+  width: 500px;
+  max-width: 100%;
+  text-align: center;
+}
+#slider__frame {
+  padding: 10px 20px;
+  background-color: #25282a;
+  position: relative;
+}
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+#s1:checked ~ #slider__frame .slider__container {
+  margin-left: 0;
+}
+#s2:checked ~ #slider__frame .slider__container {
+  margin-left: -100%;
+}
+#s3:checked ~ #slider__frame .slider__container {
+  margin-left: -200%;
+}
+#s4:checked ~ #slider__frame .slider__container {
+  margin-left: -300%;
+}
+.slider__container {
+  transition: 0.2s;
+  width: 400%;
+  height: 450px;
+}
+
+.slider__image {
+  display: block;
+  border-radius: 10px;
+  width: 100%;
+  height: 390px;
+  margin-bottom: 20px;
+}
+
+.slide {
+  width: 25%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.item1,
+.item2,
+.item3,
+.item4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider__nav {
+  margin-top: 20px;
+}
+
+.slider__btn {
+  border: 1px solid #71abff;
+  cursor: pointer;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #71abff;
+  margin: 0 10px;
+  transition: 0.2s;
+}
+.slider__btn:hover {
+  border: 1px solid #fff;
+  background-color: #fff;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+#s1:checked ~ .slider__nav label:nth-child(1),
+#s2:checked ~ .slider__nav label:nth-child(2),
+#s3:checked ~ .slider__nav label:nth-child(3),
+#s4:checked ~ .slider__nav label:nth-child(4) {
+  border: 1px solid #fff;
+  background-color: #25282a;
+}
+
+@media (max-width: 499px) {
+  .slider {
+    width: 400px;
+  }
+  .slider__image {
+    height: 350px;
+  }
+  .slider__nav {
+    margin-top: 5px;
+  }
+  .slider__btn {
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 399px) {
+  .slider {
+    width: 320px;
+  }
+  .slider__image {
+    height: 300px;
+  }
+  .slider__nav {
+    margin-top: 0px;
+  }
+  .slider__btn {
+    margin: 0 3px;
+    width: 9px;
+    height: 9px;
+  }
+}
